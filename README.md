@@ -27,7 +27,7 @@ crypto加密算法库
 
 引用链接：
 
-> https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/randomStr.js
+> [https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/randomStr.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/randomStr.js)
 
 HTML引用：
 
@@ -95,7 +95,7 @@ partList:段落列表
 
 引用链接：
 
-> https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/md5.js
+> [https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/md5.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/md5.js)
 
 HTML引用：
 
@@ -111,7 +111,7 @@ HTML引用：
 
 引用链接：
 
-> https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/base64.js
+> [https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/base64.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/base64.js)
 
 HTML引用：
 
@@ -127,7 +127,7 @@ HTML引用：
 
 引用链接：
 
-> https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/CRC32.js
+> [https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/CRC32.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/CRC32.js)
 
 HTML引用：
 
