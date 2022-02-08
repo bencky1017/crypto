@@ -13,7 +13,7 @@ crypto加密算法库
 
 [crypto加密算法库](#crypto加密算法库) 
 
-[RandomString随机数](##RandomString随机数) 
+[RandomString随机数](#RandomString随机数) 
 
 [MD5摘要算法](#MD5摘要算法)
 
@@ -27,12 +27,12 @@ crypto加密算法库
 
 引用链接：
 
-> https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/randomStr.js
+> https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/randomStr.js
 
 HTML引用：
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/randomStr.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/randomStr.js"></script>
 ```
 
 ### 函数
@@ -45,7 +45,7 @@ RandomString(length,?type,?showName)
 
 #### 参数说明
 
-```js
+```txt
 length:长度
 type:类型，参数为：[1-6]
 	1：数字
@@ -76,13 +76,13 @@ SplitString(?unit,?partList)
 
 #### 方法参数
 
-```js
+```txt
 unit:分隔符
 partList:段落列表
 
 ```
 
-内置默认算法（详见[JS文件](https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/randomStr.js)）
+内置默认算法（详见[JS文件](https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/randomStr.js)）
 
 
 
@@ -93,7 +93,7 @@ partList:段落列表
 
 引用链接：
 
-> https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/md5.js
+> https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/md5.js
 
 HTML引用：
 
@@ -109,7 +109,7 @@ HTML引用：
 
 引用链接：
 
-> https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/base64.js
+> https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/base64.js
 
 HTML引用：
 
@@ -125,7 +125,7 @@ HTML引用：
 
 引用链接：
 
-> https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/CRC32.js
+> https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/CRC32.js
 
 HTML引用：
 
