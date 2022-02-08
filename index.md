@@ -1,37 +1,138 @@
-## Welcome to GitHub Pages
+crypto加密算法库
+==
 
-You can use the [editor on GitHub](https://github.com/bencky1017/crypto/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+这个库中包含了base64,MD5,CRC32等加密算法，部分支持Unicode编码，具体可查阅README文档了解调用方法。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+*（注：算法内容为个人学习编写，写法可读性高，非官方标准写法。）*
 
-### Markdown
+**应用**：可直接应用于网页中
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+---
 
-```markdown
-Syntax highlighted code block
+**目录**
 
-# Header 1
-## Header 2
-### Header 3
+[crypto加密算法库](#crypto加密算法库) 
 
-- Bulleted
-- List
+[RandomString随机数](##RandomString随机数) 
 
-1. Numbered
-2. List
+[MD5摘要算法](#MD5摘要算法)
 
-**Bold** and _Italic_ and `Code` text
+[Base64加密解密](#Base64加密解密)
 
-[Link](url) and ![Image](src)
+[CRC32校验算法](#CRC32校验算法)
+
+---
+
+## RandomString随机数
+
+引用链接：
+
+> https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/randomStr.js
+
+HTML引用：
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/randomStr.js"></script>
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### 函数
 
-### Jekyll Themes
+生成随机数（长度,?类型,?显示名称）[^符号解释]
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bencky1017/crypto/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```javascript
+RandomString(length,?type,?showName)
+```
 
-### Support or Contact
+#### 参数说明
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```js
+length:长度
+type:类型，参数为：[1-6]
+	1：数字
+	2：字母
+	3：数字+字母
+	4：数字+符号
+	5：字母+符号
+	6：数字+字母+符号(_~!@#$%^&+{}`-=[];,)
+默认类型为：数字+字母
+showName:显示名称，参数为：[true|false|1|0]
+```
+
+#### 代码示例
+
+> \> RandomString(8,3)
+> "zBR6wbw3"
+>
+> \> RandomString(8,3,true)
+> "数字+字母:tGate3DQ"
+
+### 方法
+
+分隔字符串（?分隔符,?段落列表）
+
+```javascript
+SplitString(?unit,?partList)
+```
+
+#### 方法参数
+
+```js
+unit:分隔符
+partList:段落列表
+
+```
+
+内置默认算法（详见[JS文件](https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/randomStr.js)）
+
+
+
+
+---
+
+## MD5摘要算法
+
+引用链接：
+
+> https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/md5.js
+
+HTML引用：
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/md5.js"></script>
+```
+
+
+
+---
+
+## Base64加密解密
+
+引用链接：
+
+> https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/base64.js
+
+HTML引用：
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/base64.js"></script>
+```
+
+
+
+---
+
+## CRC32校验算法
+
+引用链接：
+
+> https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/CRC32.js
+
+HTML引用：
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/CRC32.js"></script>
+```
+
+
+
+[^符号解释]: "?"表示可以省略的参数
