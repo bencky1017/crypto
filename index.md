@@ -13,13 +13,13 @@ crypto加密算法库
 
 [crypto加密算法库](#crypto加密算法库) 
 
-[RandomString随机数](#RandomString随机数) 
+[RandomString随机数](#randomstring随机数) 
 
-[MD5摘要算法](#MD5摘要算法)
+[MD5摘要算法](#md5摘要算法)
 
-[Base64加密解密](#Base64加密解密)
+[Base64加密解密](#base64加密解密)
 
-[CRC32校验算法](#CRC32校验算法)
+[CRC32校验算法](#crc32校验算法)
 
 ---
 
@@ -61,9 +61,11 @@ showName:显示名称，参数为：[true|false|1|0]
 #### 代码示例
 
 > \> RandomString(8,3)
-> "zBR6wbw3"
 >
+> "zBR6wbw3"
+
 > \> RandomString(8,3,true)
+>
 > "数字+字母:tGate3DQ"
 
 ### 方法
@@ -98,7 +100,7 @@ partList:段落列表
 HTML引用：
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/md5.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/md5.js"></script>
 ```
 
 
@@ -114,7 +116,7 @@ HTML引用：
 HTML引用：
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/base64.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/base64.js"></script>
 ```
 
 
@@ -130,7 +132,7 @@ HTML引用：
 HTML引用：
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@1.0.0/js/CRC32.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@master/js/CRC32.js"></script>
 ```
 
 
