@@ -1,7 +1,7 @@
 /********************************************
 * Title:    Base64
-* Date:     2022-2-8 22:01:30
-* Version:  v1.0.0
+* Date:     2022-2-9 15:36:36
+* Version:  v1.0.1
 * Author:   Bencky1017
 * Describe: Base64 Encode and Decode with UTF-8 unicode
 *
@@ -31,6 +31,9 @@ var base64={
 		var u_b64=base64.encode(str)
 		return u_b64;
 	},
+	utf8decode:function(str){
+		var pass=0;
+	},
 	encode:function(str){
 		var table='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 		var t_str='';//存储8位二进制
@@ -48,11 +51,33 @@ var base64={
 		t_b64+=t_str.length%24/6==2?'==':t_str.length%24/6==3?'=':'';//空位补‘=’占位
 		return t_b64;
 	},
-	decode:function(str){
-		
+	decode:function decode(str){
+		var table='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+		var len=str.length;
+		var t_code=6*len;
+		if (str.substring(len-1)=='=') {
+			if (str.substring(len-2)=='==') {//有两个'='，去12位
+				t_code-=12;len-=2;
+			}else{//有一个'='，去6位
+				t_code-=6;len-=1;
+			}
+		}
+		var b_b64='';
+		for (var i = 0; i < len; i++) {
+			b_b64+=(table.indexOf(str[i]).toString(2).lfill(6))
+		}
+		var d_b64='';
+		for (var i = 0; i < Math.floor(t_code/8); i++) {
+			d_b64+=String.fromCharCode(parseInt(b_b64.substr(i*8,8),2));
+		}
+		return d_b64;
 	}
 };
+//test case
 window.Base64=base64;
+window.be=base64.encode;
+window.bd=base64.decode;
+
 String.prototype.lfill = function(num=undefined) {
 	var len=this.length;
 	var res='';
