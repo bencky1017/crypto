@@ -1,14 +1,14 @@
 /********************************************
 * Title:    RandomString
-* Date:     2022-2-8 22:01:30
-* Version:  v1.0.0
+* Date:     2022-2-11 15:46:54
+* Version:  v1.0.1
 * Author:   Bencky1017
-* Describe: RandomString produce
+* Describe: RandomString produce.
 *
 * https://github.com/bencky1017/crypto
 ********************************************/
 function rs(length,type=undefined,showName=false){
-	return RandomString(length,type=undefined,showName=false)
+	return RandomString(length,type,showName)
 }
 function RandomString(length,type=undefined,showName=false){
 	if (length==undefined) {return"Error:Invalid String.";}
@@ -26,9 +26,9 @@ function RandomString(length,type=undefined,showName=false){
 		'_','~','!','@','#','$','%','^','&','+','{','}','`','-','=','[',']',';','\'',','
 	]
 
-	var cutIn=0;//截取开始
-	var cutOut=81;//截取结束
-	var typeName='';//类型名称
+	var cutIn=0;      //截取开始
+	var cutOut=81;    //截取结束
+	var typeName='';  //类型名称
 	switch(type){
 
 		//格式：数字
@@ -55,28 +55,31 @@ function RandomString(length,type=undefined,showName=false){
 	}
 	return showName?typeName+':'+result:result;
 };
-String.prototype.SplitString = function (unit=undefined,partList=undefined) {
+String.prototype.splits = function (unit=undefined,partList=undefined) {
 	if (this=='') {return "Error:Invalid string.";}
 	if (unit==undefined) {var unit='-';}
 
-	//32序列长度:xxxxxxxx-xxxx-xxxx-xxxx-x*n 8-4-4-4-n
-	//数据内容:a_bit:32 b_part:5 c_start:8 d_via:22 e_mid:4 f_end:12
-	//计算公式:a:length b:a/8+1  c:(b-4)*2 d:a-b*2  e:d/b   f:a-c-(b-2)*e
-	var a_bit=this.length;						//位长
-	var b_part=Math.round(a_bit/8+1);			//段落数
-	var c_start=Math.round((b_part-1)*2);		//开始位数
-	var d_via=a_bit-b_part*2;					//（中间计算）
-	var e_mid=Math.round(d_via/b_part);			//中段位数
-	var f_end=a_bit-c_start-(b_part-2)*e_mid;	//末尾位数
-	var list=[];								//list数据
-	var listTemp=[];							//暂存list
-	// console.log(a_bit+','+b_part+','+c_start+','+e_mid+','+f_end);
+	//32位长度: 以UUID格式为例
+	//序列长度: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 8-4-4-4-12(n)
+	//数据内容: a_bit:32   b_part:5   c_start:8   d_via:22   e_mid:4   f_end:12
+	//计算公式: a:length  _b:a/8+1   _c:(b-4)*2   d:a-b*2   _e:d/b     f:a-c-(b-2)*e
+
+	var _this=this.replace(/\S+\:/,'');         //去除原有typeName
+	var a_bit=_this.length;                     //位长
+	var b_part=Math.round(a_bit/8+1);           //段落数
+	var c_start=Math.round((b_part-1)*2);       //开始位数
+	var d_via=a_bit-b_part*2;                   //（中间计算）
+	var e_mid=Math.round(d_via/b_part);         //中段位数
+	var f_end=a_bit-c_start-(b_part-2)*e_mid;   //末尾位数
+	var list=[];                                //list数据
+	var listTemp=[];                            //暂存list
+	// console.log('位:'+a_bit+',段:'+b_part+',始'+c_start+',中'+e_mid+',末'+f_end);
 	
-	listTemp.push(c_start);
+	listTemp.push(c_start);                     //列表数据:始
 	for (var i = 0; i < b_part-2; i++) {
-		listTemp.push(e_mid);
+		listTemp.push(e_mid);                   //列表数据:中
 	}
-	// listTem.push(f_end);
+	// listTem.push(f_end);                     //列表数据:末
 
 	if (partList==undefined) {
 		list=listTemp
@@ -89,7 +92,7 @@ String.prototype.SplitString = function (unit=undefined,partList=undefined) {
 		}
 	}
 
-	var str2list=this.split('');//字符串转列表
+	var str2list=_this.split('');//字符串转列表
 	var groupLen=0;//累计分组长度
 	var listgroup=list;
 	for(var i=0;i<listgroup.length;i++){
