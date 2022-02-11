@@ -1,7 +1,7 @@
 /********************************************
 * Title:    Base64
-* Date:     2022-2-10 14:06:34
-* Version:  v1.0.2
+* Date:     2022-2-11 16:41:09
+* Version:  v1.0.3
 * Author:   Bencky1017
 * Describe: Base64 Encode and Decode with UTF-8 unicode
 *
@@ -70,7 +70,7 @@ var base64={
 			for (var i = 0; i < 6-leave; i++) {t_str+='0';}
 		}
 		for (var i = 0; i < Math.floor(t_str.length/6); i++) {//编码结果存储
-			t_b64+=this.table[parseInt(t_str.substr(i*6,6),2)];
+			t_b64+=base64.table[parseInt(t_str.substr(i*6,6),2)];
 		}
 		t_b64+=t_str.length%24/6==2?'==':t_str.length%24/6==3?'=':'';//空位补‘=’占位
 		return t_b64;
@@ -87,7 +87,7 @@ var base64={
 		}
 		var b_b64='';
 		for (var i = 0; i < len; i++) {
-			b_b64+=(this.table.indexOf(str[i]).toString(2).lfill(6))
+			b_b64+=(base64.table.indexOf(str[i]).toString(2).lfill(6))
 		}
 		var d_b64='';
 		for (var i = 0; i < Math.floor(t_code/8); i++) {
