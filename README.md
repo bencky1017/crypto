@@ -1,6 +1,5 @@
 crypto加密算法库
 ==
-
 这个库中包含了base64,MD5,CRC32等加密算法，部分支持Unicode编码，具体可查阅README文档了解调用方法。
 
 *（注：算法内容为个人学习编写，写法可读性高，非官方标准写法。）*
@@ -27,7 +26,7 @@ crypto加密算法库
 
 引用链接：
 
-> [https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/randomStr.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/randomStr.js)
+> [https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/randomStr.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/randomStr.js)
 
 HTML引用：
 
@@ -93,7 +92,7 @@ partList:段落列表，数组
 	如32位字符串，按照UUID的格式，为：[8,4,4,4]，最后一位‘12’省略
 ```
 
-`partList`参数可以为空，内置的默认算法如下：（详见[JS文件](https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/randomStr.js)）
+`partList`参数可以为空，内置的默认算法如下：（详见[JS文件](https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/randomStr.js)）
 
 | 变量    | 名称         | 公式                           | 数值 |
 | :------ | :----------- | :----------------------------- | :--- |
@@ -127,12 +126,12 @@ partList:段落列表，数组
 
 引用链接：
 
-> [https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/base64.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/base64.js)
+> [https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/base64.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/base64.js)
 
 HTML引用：
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/base64.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/base64.js"></script>
 ```
 
 ### 函数
@@ -237,7 +236,7 @@ num:字符串长度，默认为8
 
 引用链接：
 
-> [https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/md5.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/md5.js)
+> [https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/md5.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/md5.js)
 
 HTML引用：
 
@@ -253,7 +252,7 @@ HTML引用：
 
 引用链接：
 
-> [https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/CRC32.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto@main/js/CRC32.js)
+> [https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/CRC32.js](https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/CRC32.js)
 
 HTML引用：
 
