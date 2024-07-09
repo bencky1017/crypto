@@ -1,15 +1,203 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Crypto加密算法</title>
+	<link rel="stylesheet" href="css/index.css">
 	<script type="text/javascript" src="js/randomStr.js">/*随机数*/</script>
 	<script type="text/javascript" src="js/CRC32.js">/*CRC32*/</script>
 	<script type="text/javascript" src="js/md5.js">/*MD5*/</script>
 	<script type="text/javascript" src="js/base64.js">/*Base64*/</script>
 </head>
+
 <body>
-	<div class="main">打开控制台进行操作！</div>
+	<div class="main">
+		<div class="card">
+			<!-- CRC32 -->
+			<div class="crypto_CRC32" style="width: 400px;">
+				<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/CRC32.js"></script>
+				<div class="crypto1" style="width: 100%;max-width:400px;">
+					<div class="crypto_title">
+						<h2>CRC32</h2>
+					</div>
+					<div class="input1">
+						<textarea name="input_block1" id="input_block1" cols="30" rows="4" placeholder="输入需要加解密的文本："
+							style="width: 99%;"></textarea>
+					</div>
+					<div class="crypto_button1">
+						<input type="button" class="btn1_1" value="加密" style="width: 99%;height: 60px;margin:10px 0px;">
+					</div>
+					<div class="output1">
+						<textarea name="output_block1" id="output_block1" cols="30" rows="4" placeholder="加解密结果："
+							style="width: 99%;"></textarea>
+					</div>
+					<div class="tips1">
+						字符长度：<span class="tips_span1">-</span>
+					</div>
+				</div>
+				<script>
+					$('.btn1_1').on('click', function () {
+						var get_val = $('#input_block1').val().trim()
+						// 此处使用不同的加密算法
+						var res_val = crc32(get_val)
+						$('#output_block1').val(res_val)
+						$('.tips_span1').text(res_val.length)
+					});
+				</script>
+			</div>
+		</div>
+		<div class="card">
+			<!-- Base64 -->
+			<div class="crypto_Base64" style="width: 400px;">
+				<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/base64.js"></script>
+				<div class="crypto2" style="width: 100%;max-width:400px;">
+					<div class="crypto_title2">
+						<h2>Base64</h2>
+					</div>
+					<div class="input2">
+						<textarea name="input_block2" id="input_block2" cols="30" rows="4" placeholder="输入需要加解密的文本："
+							style="width: 99%;"></textarea>
+					</div>
+					<div class="crypto_button2">
+						<input type="button" class="btn2_1" value="加密" style="width: 48%;height: 60px;margin:10px 0px;">
+						<input type="button" class="btn2_2" value="解密" style="width: 48%;height: 60px;margin:10px 0px;">
+					</div>
+					<div class="output2">
+						<textarea name="output_block2" id="output_block2" cols="30" rows="4" placeholder="加解密结果："
+							style="width: 99%;"></textarea>
+					</div>
+					<div class="tips2">
+						字符长度：<span class="tips_span2">-</span>
+					</div>
+				</div>
+				<script>
+					$('.btn2_1').on('click', function () {
+						var get_val = $('#input_block2').val().trim();
+						// 此处使用不同的加密算法
+						var res_val = beu(get_val)
+						console.log(res_val)
+						$('#output_block2').val(res_val)
+						$('.tips_span2').text(res_val.length)
+					});
+					$('.btn2_2').on('click', function () {
+						var get_val = $('#input_block2').val().trim();
+						// 此处使用不同的加密算法
+						var res_val = bdu(get_val)
+						$('#output_block2').val(res_val)
+						$('.tips_span2').text(res_val.length)
+					});
+				</script>
+			</div>
+		</div>
+		<div class="card">
+			<!-- MD5/MDBK -->
+			<div class="crypto_MD5" style="width: 400px;">
+				<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/md5.js"></script>
+				<div class="crypto3" style="width: 100%;max-width:400px;">
+					<div class="crypto_title3">
+						<h2>MD5/MDBK</h2>
+					</div>
+					<div class="input3">
+						<textarea name="input_block3" id="input_block3" cols="30" rows="4" placeholder="输入需要加解密的文本："
+							style="width: 99%;"></textarea>
+					</div>
+					<div class="type3">
+						<input type="radio" name="type3" id="md5" value="md5" checked>
+						<label for="md5">md5</label>
+						<input type="radio" name="type3" id="mdbk" value="mdbk">
+						<label for="mdbk">mdbk</label>
+					</div>
+					<div class="crypto_button3">
+						<input type="button" class="btn3_1" value="加密" style="width: 99%;height: 60px;margin:10px 0px;">
+					</div>
+					<div class="output3">
+						<textarea name="output_block3" id="output_block3" cols="30" rows="4" placeholder="加解密结果："
+							style="width: 99%;"></textarea>
+					</div>
+					<div class="tips3">
+						字符长度：<span class="tips_span3">-</span>
+					</div>
+				</div>
+				<script>
+					$('.btn3_1').on('click', function () {
+						var get_val = $('#input_block3').val().trim()
+						var type_val = $("input[name='type3']:checked").val();
+						// 此处使用不同的加密算法
+						var res_val = type_val == 'md5' ? md5(get_val) : mdbk(get_val)
+						$('#output_block3').val(res_val)
+						$('.tips_span3').text(res_val.length)
+					})
+				</script>
+			</div>
+		</div>
+		<div class="card">
+			<!-- Random String -->
+			<div class="crypto_RandomString" style="width: 400px;">
+				<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+				<script src="https://cdn.jsdelivr.net/gh/bencky1017/crypto/js/randomStr.js"></script>
+				<div class="crypto4" style="width: 100%;max-width:400px;">
+					<div class="crypto_title4">
+						<h2>Random String</h2>
+					</div>
+					<div class="input4">
+						<div class="input4_info" style="font-size: 16px;text-align: center;">
+							类型，参数为：1-6<br>
+							1：数字<br>
+							2：字母<br>
+							3：数字+字母<br>
+							4：数字+符号<br>
+							5：字母+符号<br>
+							6：数字+字母+符号<br>(_~!@#$%^&+{}`-=[];,)<br>
+							默认类型为：数字+字母
+						</div>
+						<input type="search" name="input4_len" id="input4_len" placeholder="长度：num"
+							style="width: 26%;height: 30px;margin:10px 0px;">
+						<input type="search" name="input4_type" id="input4_type" placeholder="类型：1-6"
+							style="width: 26%;height: 30px;margin:10px 0px;">
+						<input type="search" name="input4_tip" id="input4_tip" placeholder="提示：0|1"
+							style="width: 26%;height: 30px;margin:10px 0px;">
+					</div><!-- 
+					<div class="type4">
+						<input type="radio" name="type4" id="md5" value="md5" checked>
+						<label for="md5">md5</label>
+						<input type="radio" name="type4" id="mdbk" value="mdbk">
+						<label for="mdbk">mdbk</label>
+					</div> -->
+					<div class="crypto_button4">
+						<input type="button" class="btn4_1" value="生成" style="width: 99%;height: 60px;margin:10px 0px;">
+					</div>
+					<div class="output4">
+						<textarea name="output_block4" id="output_block4" cols="30" rows="4" placeholder="随机字符串："
+							style="width: 99%;"></textarea>
+					</div>
+					<div class="tips4">
+						字符长度：<span class="tips_span4">-</span>
+					</div>
+				</div>
+				<script>
+					$('.btn4_1').on('click', function () {
+						var get_len = parseInt($('#input4_len').val().trim())
+						var get_type = parseInt($('#input4_type').val().trim())
+						var get_tip = parseInt($('#input4_tip').val().trim())
+						console.log(get_len)
+						console.log(get_type)
+						console.log(get_tip)
+
+						// 此处使用不同的加密算法
+						var res_val = RandomString(get_len, get_type, get_tip)
+						console.log(res_val)
+						$('#output_block4').val(res_val)
+						$('.tips_span4').text(res_val.length)
+					})
+				</script>
+			</div>
+		</div>
+	</div>
 </body>
+
 </html>
